@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+>
+<body>
+<form name="logoutForm" th:action="@{/logout}" method="post">
+	<input type="submit" value="Logout"/>
+</form>
+<center>
+	<table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Description</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="crisis: ${list}">
+                    <th scope="row" th:text="${crisis.id}"></th>
+                    <td th:text="${crisis.description}"></td>
+                </tr>
+            </tbody>
+      </table>
+</center>
+
+</body>
+</html>
